@@ -24,7 +24,7 @@ def mainLoop():
                 print(f"[Яндекс Музыка] Слушаем {artist} - {song}")
                 MRPC.updatePresence(artist, song, image_link, song_link)
         except Exception as e:
-            print(e)
+            #print(e)
             MRPC.mywavePresence()            
         time.sleep(0.01)
 
