@@ -1,5 +1,5 @@
 # **Yandex Music Discord Rich Presence**
-Discord RPC для приложения Яндекс музыка
+Discord RPC для приложения и веб версии Яндекс Музыки
 
 
 Доработка, улучшение кода/функционала : @maj0roff
