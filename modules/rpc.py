@@ -6,11 +6,9 @@ config = ConfigParser()
 config.read('info/config.ini')
 
 dRPC = Presence(client_id=config.get('main', 'dsappid'))
-
+dRPC.connect()
 
 class MRPC:
-    def connect():
-        dRPC.connect()
     def mywavePresence():
         dRPC.update(
             details="Моя волна",
