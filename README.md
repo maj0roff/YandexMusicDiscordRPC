@@ -1,7 +1,7 @@
 # **Yandex Music Discord Rich Presence**
 Discord RPC для приложения и веб версии Яндекс Музыки
 
-![mr](https://img.shields.io/badge/maid%20in-russia-red)
+![mr](https://img.shields.io/badge/made%20in%20Russia%20with-Love-red)
 
 ![ff](https://img.shields.io/badge/price-FREE-white)
 ![src](https://img.shields.io/badge/source%20code-open-blue)
