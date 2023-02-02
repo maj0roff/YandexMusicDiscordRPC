@@ -1,8 +1,6 @@
 # **Yandex Music Discord Rich Presence**
 Discord RPC для приложения и веб версии Яндекс Музыки
 
-![mr](https://img.shields.io/badge/made%20in%20Russia%20with-Love-red)
-
 ![ff](https://img.shields.io/badge/price-FREE-green)
 ![src](https://img.shields.io/badge/source%20code-open-red)
 ![src2](https://img.shields.io/badge/language-python-blue)
@@ -27,3 +25,5 @@ Discord RPC для приложения и веб версии Яндекс Му
 Использовать код из этой программы можно без обязательного указания автора.
 Автор данной программы не несёт ответственность за данные выших аккаунтов, он их не получает и никому не передаёт.
 Все что вы делаете, вы делаете на свой страх и риск.
+
+![image](https://user-images.githubusercontent.com/54349566/216373393-ecd05c8e-f614-4836-a52b-1b456393ede4.png)
