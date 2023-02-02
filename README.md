@@ -3,9 +3,9 @@ Discord RPC для приложения и веб версии Яндекс Му
 
 ![mr](https://img.shields.io/badge/made%20in%20Russia%20with-Love-red)
 
-![ff](https://img.shields.io/badge/price-FREE-white)
-![src](https://img.shields.io/badge/source%20code-open-blue)
-![src2](https://img.shields.io/badge/language-python-red)
+![ff](https://img.shields.io/badge/price-FREE-green)
+![src](https://img.shields.io/badge/source%20code-open-red)
+![src2](https://img.shields.io/badge/language-python-blue)
 
 Доработка, улучшение кода/функционала : @maj0roff
 
