@@ -20,7 +20,6 @@ from modules.yandexmusic import MYAPI
 from threading import Thread
 
 def app():
-    print("[Яндекс Музыка] Для того что-бы скрыть или показать окно консоли нажмите Ctrl+F9")
     switch = 0
     lasttrack = 0
     while True:
