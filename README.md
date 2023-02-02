@@ -1,9 +1,11 @@
 # **Yandex Music Discord Rich Presence**
 Discord RPC для приложения и веб версии Яндекс Музыки
 
-![ff](https://img.shields.io/badge/price-FREE-green)
-![src](https://img.shields.io/badge/source%20code-open-yellow)
-![src2](https://img.shields.io/badge/language-python-blue)
+![mr](https://img.shields.io/badge/maid in-russia-white)
+
+![ff](https://img.shields.io/badge/price-FREE-white)
+![src](https://img.shields.io/badge/source%20code-open-blue)
+![src2](https://img.shields.io/badge/language-python-red)
 
 Доработка, улучшение кода/функционала : @maj0roff
 
