@@ -1,6 +1,6 @@
 # **Yandex Music Discord Rich Presence**
 Discord RPC для приложения и веб версии Яндекс Музыки
-
+[https://img.shields.io/badge/price-FREE-yellow]
 
 Доработка, улучшение кода/функционала : @maj0roff
 
