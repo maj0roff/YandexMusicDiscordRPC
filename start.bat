@@ -1,4 +1,3 @@
 @echo off
-:restart
-py main.py
-goto restart
+pythonw.exe main.pyw
+exit
