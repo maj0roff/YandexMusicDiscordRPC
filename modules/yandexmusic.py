@@ -29,31 +29,29 @@ class MYAPI:
             
         client = Client(config.get("main", "ym")).init()
 
-    def songTitle():
-        lQ = client.queue(client.queues_list()[0].id)
-        last_track_id = lQ.get_current_track()
-        last_track = last_track_id.fetch_track()
-        return last_track.title
+    def get_current_track():
+        queue = client.queues_list()
+        if len(queue) == 0:
+            raise "nothing playing"
 
-    def songArtist():
-        lQ = client.queue(client.queues_list()[0].id)
-        lQid = lQ.get_current_track()
-        last_track = lQid.fetch_track()
-        return ', '.join(last_track.artists_name())
-    
-    def songLink():
-        lQ = client.queue(client.queues_list()[0].id)
-        lQid = lQ.get_current_track()
-        lQlt = lQid.fetch_track()
-        return f"https://music.yandex.ru/album/{lQlt['albums'][0]['id']}/track/{lQlt['id']}/"
-        
-    def songID():
-        lQ = client.queue(client.queues_list()[0].id)
-        return lQ.get_current_track()
+        queue = client.queue(queue[0].id)
+        if queue.context.id == 'user:onyourwave':
+            return {
+                "title" : "Моя волна",
+                "link" : None,
+                "image" : "https://github.com/maj0roff/YandexMusicDiscordRPC/raw/main/fallback-black_2.gif",
+                "id" : "wave",
+                "artist" : None
+            }
+            
+        track = queue.get_current_track().fetch_track()
 
-    def songImage():
-        queues = client.queues_list()
-        lQ = client.queue(queues[0].id)
-        lQid = lQ.get_current_track()
-        lQlt = lQid.fetch_track()
-        return "https://" + lQlt.cover_uri.replace("%%", "1000x1000")
+        return {
+            "title" : track.title,
+            "link" : f"https://music.yandex.ru/album/{track['albums'][0]['id']}/track/{track['id']}/",
+            "image" : f"https://{track.cover_uri.replace('%%', '1000x1000')}",
+            "id" : track.id,
+            "artist" : ", ".join(track.artists_name())
+        }
+
+
