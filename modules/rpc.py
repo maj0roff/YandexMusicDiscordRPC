@@ -13,65 +13,73 @@ dRPC.connect()
 class MRPC:
     def Clear():
         dRPC.clear()
-    def mywavePresence():
+
+    def idling():
         dRPC.update(
-            details="Моя волна",
+            details="Ничего не слушает",
             large_image="https://github.com/maj0roff/YandexMusicDiscordRPC/raw/main/fallback-black_2.gif",
             small_image="https://github.com/maj0roff/YandexMusicDiscordRPC/blob/main/logo.png?raw=true",
-            large_text=f"На своей волне"
+            large_text=f"Ничего не прослушивается."
         )
-    def updatePresence(aritst, song, image_link, song_link):
+
+    def updatePresence(artist = None, 
+                    song = None, 
+                    image_link = None,
+                    song_link = None):
         btns = [
             {
                 "label": "Слушать",
                 "url": song_link
             },
-        ]
+        ] if not song_link is None else None
+
         dRPC.update(
             details=song,
-            state=aritst,
+            state=artist,
             large_image=image_link,
             small_image="https://github.com/maj0roff/YandexMusicDiscordRPC/blob/main/logo.png?raw=true",
-            large_text=f"{aritst} - {song}",
+            large_text=f"{artist if not artist is None else ''} - {song}",
             buttons=btns
         )
 
     def ForceUpdate():
         try:
-            songid = MYAPI.songID()
-            artist = MYAPI.songArtist()
-            song = MYAPI.songTitle()
-            image_link = MYAPI.songImage()
-            song_link = MYAPI.songLink()
-            if songid != lasttrack:
-                lasttrack = songid
+            song = MYAPI.get_current_track()
+            if song['id'] != lasttrack:
+                lasttrack = song['id']
                 switch = 1
             if switch == 1:
                 switch = 0
                 #print(f"[Яндекс Музыка] Слушаем {artist} - {song}")
-                MRPC.updatePresence(artist, song, image_link, song_link)
+                MRPC.updatePresence(
+                    song['artist'],
+                    song['title'],
+                    song['image'],
+                    song['link']
+                )
         except Exception as e:
             print(e)
-            MRPC.mywavePresence()
+            MRPC.idling()
 
     def callPresence():
         while True:
             switch = 0
             lasttrack = 0
             try:
-                songid = MYAPI.songID()
-                artist = MYAPI.songArtist()
-                song = MYAPI.songTitle()
-                image_link = MYAPI.songImage()
-                song_link = MYAPI.songLink()
-                if songid != lasttrack:
-                    lasttrack = songid
+                song = MYAPI.get_current_track()
+                if song['id'] != lasttrack:
+                    lasttrack = song['id']
                     switch = 1
                 if switch == 1:
                     switch = 0
                     #print(f"[Яндекс Музыка] Слушаем {artist} - {song}")
-                    MRPC.updatePresence(artist, song, image_link, song_link)
+                    MRPC.updatePresence(
+                        song['artist'],
+                        song['title'],
+                        song['image'],
+                        song['link']
+                    )
             except Exception as e:
                 print(e)
-                MRPC.mywavePresence()            
-            time.sleep(0.01)
+                MRPC.idling()            
+            time.sleep(1)
