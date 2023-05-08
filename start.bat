@@ -1,3 +1,3 @@
 @echo off
-pythonw.exe main.py
+python.exe main.py
 exit
